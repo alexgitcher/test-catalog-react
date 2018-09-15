@@ -1,0 +1,7 @@
+.product__label_new {
+  top: -62px;
+	right: -61px;
+	background: #da3558;
+	background-image: linear-gradient(135deg, #da3558 60%, #cc265c);
+	transform: rotate(45deg);
+}

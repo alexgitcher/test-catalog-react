@@ -1,0 +1,13 @@
+.product__label-text {
+  position: absolute;
+	bottom: 2px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	font-family: Verdana, sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 30px;
+	color: #fff;
+	text-transform: uppercase;
+}

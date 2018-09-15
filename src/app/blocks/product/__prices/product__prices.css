@@ -1,0 +1,6 @@
+.product__prices {
+  display: block;
+  padding: 5px 20px;
+  font-family: Verdana, sans-serif;
+  line-height: 30px;
+}

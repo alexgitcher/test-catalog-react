@@ -1,0 +1,6 @@
+.product__old-price {
+  font-size: 18px;
+  color: #91979f;
+  text-decoration: line-through;
+  padding-left: 12px;
+}

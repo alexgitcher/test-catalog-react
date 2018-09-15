@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Catalog from '../../blocks/catalog';
+import Product from '../../blocks/product';
 
 import ProductsMock from '../../products.mock.json';
 
@@ -31,7 +32,20 @@ export default class CatalogView extends React.Component {
         hit={this.state.hit}
         new={this.state.new}
         sale={this.state.sale}
-      ></Catalog>
+      >
+        {ProductsMock.products.map(product => (
+          <Product
+            key={product.id}
+            hit={product.hit}
+            new={product.new}
+            sale={product.sale}
+            price={product.price}
+            oldPrice={product.oldPrice}
+            imgMock="https://picsum.photos/280/280/?random"
+          >
+          </Product>
+        ))}
+      </Catalog>
     );
   }
 }
