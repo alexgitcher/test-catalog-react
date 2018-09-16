@@ -1,0 +1,72 @@
+.catalog__filter input[type="checkbox"] {
+  display: none;
+}
+
+.catalog__filter input[type="checkbox"] + label {
+  position: relative;
+	padding-left: 40px;
+	padding-right: 16px;
+	display: block;
+	cursor: pointer;
+}
+
+.catalog__filter input[type="checkbox"] + label::before,
+.catalog__filter input[type="checkbox"] + label::after {
+  position: absolute;
+  content: '';
+  display: block;
+	box-sizing: border-box;
+}
+
+.catalog__filter input[type="checkbox"] + label::before {
+  top: 50%;
+	margin-top: -10px;
+	left: 10px;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #e1dccf;
+	border-radius: 4px;
+	background-color: #fff;
+}
+
+.catalog__filter input[type="checkbox"] + label:hover {
+  background: #fff;
+	color: #8f8876;
+	border: 1px solid #e1dccf;
+	line-height: 38px;
+}
+
+.catalog__filter input[type="checkbox"] + label:hover::before {
+  border-color: #cac5b6;
+}
+
+.catalog__filter input[type="checkbox"]:checked + label::after {
+	top: 14px;
+	left: 15px;
+	width: 11px;
+	height: 7px;
+	border-bottom: solid 2px #fff;
+	border-left: solid 2px #fff;
+	transform: rotate(-45deg);
+	z-index: 21;
+}
+
+.catalog__filter input[type="checkbox"]:checked + .catalog__filter-button_sale::before {
+  background-color: #7abf0a;
+	border-color: #7abf0a;
+}
+
+.catalog__filter input[type="checkbox"]:checked + .catalog__filter-button_new::before {
+	background-color: #da3558;
+	border-color: #da3558;
+}
+
+.catalog__filter input[type="checkbox"]:checked + .catalog__filter-button_hit::before {
+	background-color: #647bb4;
+	border-color: #647bb4;
+}
+
+.catalog__filter:not(:last-child) {
+  margin-right: 20px;
+}
+

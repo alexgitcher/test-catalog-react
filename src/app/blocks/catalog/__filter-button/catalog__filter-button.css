@@ -1,0 +1,35 @@
+.catalog__filter-button {
+  position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+	text-align: center;
+  font-family: 'geometria', sans-serif;
+	font-style: normal;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 38px;
+	height: 40px;
+	text-decoration: none;
+	color: #8f8876;
+	background: #fff;
+	border: 1px solid #e1dccf;
+	border-radius: 4px;
+	cursor: pointer;
+	outline: none;
+	z-index: 20;
+	transition: background .2s ease-in-out;
+	overflow: hidden;
+	text-transform: uppercase;
+	padding: 0 28px;
+	touch-action: manipulation;
+  user-select: none;
+}
+
+.catalog__filter-button:hover {
+	border: none;
+	line-height: 40px;
+	background: #f3b812;
+	background-image: linear-gradient(125deg, #f3b812 30%, #e86942 90%);
+	color: #fff;
+}

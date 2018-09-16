@@ -1,0 +1,8 @@
+.catalog__content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: none;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}

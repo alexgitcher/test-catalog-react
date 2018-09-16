@@ -1,0 +1,7 @@
+.catalog__top-line {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: none;
+  height: 40px;
+}
