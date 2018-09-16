@@ -7,7 +7,7 @@ const CatalogFilter = (props) => (
       type="checkbox"
       name={`catalog-${props.filter}`}
       id={`catalog-${props.filter}`}
-      data-filter={props.filter}
+      onClick={props.onClick}
     />
     <label
       htmlFor={`catalog-${props.filter}`}

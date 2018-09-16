@@ -13,7 +13,14 @@ export default class CatalogView extends React.Component {
       hit: false,
       new: false,
       sale: false,
+      isHitSelect: false,
+      isNewSelect: false,
+      isSaleSelect: false,
     }
+
+    this.updateHitSelect = this.updateHitSelect.bind(this);
+    this.updateNewSelect = this.updateNewSelect.bind(this);
+    this.updateSaleSelect = this.updateSaleSelect.bind(this);
   }
 
   componentDidMount() {
@@ -26,14 +33,38 @@ export default class CatalogView extends React.Component {
     if (products.find(product => product.sale)) this.setState({ sale: true });
   }
 
+  updateHitSelect() {
+    this.setState(prevState => ({ isHitSelect: !prevState.isHitSelect }));
+  }
+
+  updateNewSelect() {
+    this.setState(prevState => ({ isNewSelect: !prevState.isNewSelect }));
+  }
+
+  updateSaleSelect() {
+    this.setState(prevState => ({ isSaleSelect: !prevState.isSaleSelect }));
+  }
+
   render() {
+
+    const products = ProductsMock.products.filter(product => {
+      if (!this.state.isHitSelect && !this.state.isNewSelect && !this.state.isSaleSelect) {
+        return product;
+      }
+
+      return (product.hit && this.state.isHitSelect) || (product.new && this.state.isNewSelect) || (product.sale && this.state.isSaleSelect);
+    });
+
     return (
       <Catalog
         hit={this.state.hit}
         new={this.state.new}
         sale={this.state.sale}
+        updateHitSelect={this.updateHitSelect}
+        updateNewSelect={this.updateNewSelect}
+        updateSaleSelect={this.updateSaleSelect}
       >
-        {ProductsMock.products.map(product => (
+        {products.map(product => (
           <Product
             key={product.id}
             hit={product.hit}

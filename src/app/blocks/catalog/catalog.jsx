@@ -10,13 +10,22 @@ const Catalog = (props) => (
         (props.hit || props.new || props.sale) && (
           <div className="catalog__top-line">
             {
-              props.hit && <CatalogFilter filter="hit" />
+              props.hit && <CatalogFilter
+                filter="hit"
+                onClick={props.updateHitSelect}
+              />
             }
             {
-              props.new && <CatalogFilter filter="new" />
+              props.new && <CatalogFilter
+                filter="new"
+                onClick={props.updateNewSelect}
+              />
             }
             {
-              props.sale && <CatalogFilter filter="sale" />
+              props.sale && <CatalogFilter
+                filter="sale"
+                onClick={props.updateSaleSelect}
+              />
             }
           </div>
         )
