@@ -1,0 +1,13 @@
+.select {
+  width: 300px;
+  margin-left: auto;
+  z-index: 3;
+}
+
+.select,
+.select * {
+  font-family: sans-serif;
+  font-size: 15px;
+  color: #8f8876 !important;
+  text-transform: uppercase;
+}

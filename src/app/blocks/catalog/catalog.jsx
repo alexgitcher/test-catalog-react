@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import CatalogFilter from './__filter';
+import CatalogSelect from '../select';
 
 const Catalog = (props) => (
   <div className="catalog">
@@ -27,6 +28,7 @@ const Catalog = (props) => (
                 onClick={props.updateSaleSelect}
               />
             }
+            <CatalogSelect onChange={props.updateSortOrder}/>
           </div>
         )
       }

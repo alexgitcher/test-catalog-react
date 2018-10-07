@@ -16,11 +16,13 @@ export default class CatalogView extends React.Component {
       isHitSelect: false,
       isNewSelect: false,
       isSaleSelect: false,
+      isSortedByIncreasing: true,
     }
 
     this.updateHitSelect = this.updateHitSelect.bind(this);
     this.updateNewSelect = this.updateNewSelect.bind(this);
     this.updateSaleSelect = this.updateSaleSelect.bind(this);
+    this.updateSortOrder = this.updateSortOrder.bind(this);
   }
 
   componentDidMount() {
@@ -45,6 +47,12 @@ export default class CatalogView extends React.Component {
     this.setState(prevState => ({ isSaleSelect: !prevState.isSaleSelect }));
   }
 
+  updateSortOrder(selectedOption) {
+    const order = selectedOption.value;
+
+    this.setState({ isSortedByIncreasing: order === 'inc' })
+  }
+
   render() {
 
     const products = ProductsMock.products.filter(product => {
@@ -55,6 +63,12 @@ export default class CatalogView extends React.Component {
       return (product.hit && this.state.isHitSelect) || (product.new && this.state.isNewSelect) || (product.sale && this.state.isSaleSelect);
     });
 
+    const sortedProducts = products.slice().sort((product1, product2) => {
+      return this.state.isSortedByIncreasing
+        ? product1.price - product2.price
+        : product2.price - product1.price;
+    });
+
     return (
       <Catalog
         hit={this.state.hit}
@@ -63,8 +77,9 @@ export default class CatalogView extends React.Component {
         updateHitSelect={this.updateHitSelect}
         updateNewSelect={this.updateNewSelect}
         updateSaleSelect={this.updateSaleSelect}
+        updateSortOrder={this.updateSortOrder}
       >
-        {products.map(product => (
+        {sortedProducts.map(product => (
           <Product
             key={product.id}
             hit={product.hit}
